@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Objective List Table </h1>
+
+<table>
+    <tr>
+        <th>Objective Name</th>
+        <th>Objective type</th>
+        <th>Priority</th>
+        <th>Complexity</th>
+        <th>Start Date</th>
+        <th>View<th>
+        <th></th>        
+        </tr>
+    {% for objective in objectives %}
+    <tr>
+        <td>{{objective.objective_name}}</td>
+        <td>{{objective.objective_type}}</td>
+        <td>{{objective.priority}}</td>
+        <td>{{objective.complexity}}</td>
+        <td>{{objective.start_date}}</td>
+        <td><a href={% url "update-objective" objective.objective_id %}>Edit</a></td>
+        <td><a href={% url "objective_details" objective.objective_id %}>View</a></td>
+        <td><a href="">Delete</a></td>
+        <td><td>
+    </tr>
+    {% endfor %}
+</table>
+<hr>
+<a href={% url "create-objective" %}>Add Objective</a>
+<hr>
+{% endblock%}

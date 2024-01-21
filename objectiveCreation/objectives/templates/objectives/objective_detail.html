@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{objective.objective_name}}</h1>
+    <hr>
+
+    <p>objective type: {{objective.objective_type}}</p>
+    <p>priority: {{objective.priority}}</p>
+    <p>complexity: {{objective.complexity}}</p>
+    <p>start date: {{objective.start_date}}</p>
+    <p>end date: {{objective.end_date}}</p>
+
+{% endblock %}
